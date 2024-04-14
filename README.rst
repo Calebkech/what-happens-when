@@ -514,11 +514,18 @@ Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+to the browser, it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
-  Painting the render tree
+1. **Parsing**: The browser parses the received HTML, CSS, and JavaScript files. 
+   - HTML Parsing: The HTML parser breaks down the HTML document into a DOM (Document Object Model) tree, representing the structure of the webpage.
+   - CSS Parsing: The CSS parser interprets the CSS files to determine the styles and rules applied to the DOM elements.
+   - JavaScript Parsing: If JavaScript is present, the browser's JavaScript engine parses and executes the scripts, modifying the DOM or performing other actions as needed.
+
+2. **Rendering**:
+   - **Construct DOM Tree**: The browser constructs the DOM tree based on the parsed HTML. Each element in the DOM tree represents a node in the HTML document.
+   - **Render Tree**: The browser creates a render tree, which is a visual representation of the DOM tree that includes only the elements visible on the webpage. This tree excludes non-visible elements like `<head>` and `<script>` tags.
+   - **Layout of Render Tree**: The browser calculates the layout (size and position) of each element in the render tree, taking into account factors such as CSS styles, viewport size, and device characteristics.
+   - **Painting the Render Tree**: Finally, the browser paints the render tree on the screen, rendering the web page's content according to the calculated layout. This involves filling pixels with colors, textures, and images to display the visual representation of the webpage.
 
 Browser
 -------
